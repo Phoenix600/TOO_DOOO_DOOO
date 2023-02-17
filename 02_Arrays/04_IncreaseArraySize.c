@@ -29,6 +29,7 @@ int main()
     
     // Creating the new array of double the size of previous one 
     int formulatedSize = number_of_elements*2+2;
+    number_of_elements = formulatedSize;
     
     q = (int*)malloc(formulatedSize*sizeof(int));
 
@@ -49,7 +50,7 @@ int main()
     // Finally we have indirectly chnaged the size of same array 
 
     // printing the array elements 
-    for (int i = 0; i < formulatedSize; i++)
+    for (int i = 0; i < number_of_elements; i++)
     {
             printf("%d ",p[i]);
     }
