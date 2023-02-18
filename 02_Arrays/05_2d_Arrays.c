@@ -105,19 +105,49 @@ int main()
         
     }
 
-    // ########### EveryBody think they are gangsta of programming 
-    // ########### Until the pointer comes.    
+    // ########### Everybody is a  gangsta... until the pointer comes.    
 
     // Creating the 2D array using 2D pointer 
-    int **MATRIX;
+    int **MATRIX3;
 
     // Following the ideal example of 3x3 matrix
     int nRow = 3;
     int nColumn = 3;
 
     // The above 2D pointer is, pointer to a pointer.
-    // In simple words, It is the array 
+    // In simple words, It is a pointer which will point to the pointer and that 
+    // second layer of pointer will point to array of pointer and then each pounter 
+    // will point to their respective contigous memory block(Array)  
 
+    MATRIX3 = (int**)malloc(nColumn*sizeof(int*));
+
+    for (int i = 0; i < nColumn; i++)
+    {
+        MATRIX3[i] = (int*)malloc(nRow*sizeof(int));
+    }
+    
+    // Assigning array elements :
+    value = 1;
+
+    for (int i = 0; i < nColumn; i++)
+    {
+        for (int j = 0; j < nRow; j++)
+        {
+            MATRIX3[i][j] = value++;
+        }
+        
+    }
+    
+
+    printf("\n");
+    for (int i = 0; i < nColumn; i++)
+    {
+        for (int j = 0; j < nRow; j++)
+        {
+            printf("%d ",MATRIX3[i][j]);
+        }
+        
+    }
 
     return 0;
 }
