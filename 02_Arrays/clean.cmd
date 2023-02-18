@@ -1,2 +1,2 @@
-echo "Cleaning up the *.exe files"
+@REM  This is files just simply cleans all the exe file 
 DEL *.exe
